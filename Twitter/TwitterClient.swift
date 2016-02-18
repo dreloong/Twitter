@@ -27,6 +27,24 @@ class TwitterClient: BDBOAuth1SessionManager {
         return Static.instance
     }
 
+    func homeTimelineWithParams(
+        params: NSDictionary?,
+        completion: (tweets: [Tweet]?, error: NSError?) -> ()
+    ) {
+        TwitterClient.sharedInstance.GET(
+            "1.1/statuses/home_timeline.json",
+            parameters: params,
+            progress: nil,
+            success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                let tweets = Tweet.tweets(response as! [NSDictionary])
+                completion(tweets: tweets, error: nil)
+            },
+            failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                completion(tweets: nil, error: error)
+            }
+        )
+    }
+
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {
         loginCompletion = completion
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()

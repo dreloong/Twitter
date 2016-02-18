@@ -23,4 +23,8 @@ class Tweet {
         createdAt = formatter.dateFromString(dictionary["created_at"] as! String)
     }
 
+    class func tweets(dictionaries: [NSDictionary]) -> [Tweet] {
+        return dictionaries.map({ dictionary in Tweet(dictionary: dictionary) })
+    }
+
 }

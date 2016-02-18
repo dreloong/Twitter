@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if User.currentUser != nil {
             window?.rootViewController =
-                storyboard.instantiateViewControllerWithIdentifier("HomeViewController")
+                storyboard.instantiateViewControllerWithIdentifier("HomeNavigationViewController")
                 as UIViewController
         }
 
