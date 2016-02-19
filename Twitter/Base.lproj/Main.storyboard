@@ -18,15 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqI-dQ-cko">
-                                <rect key="frame" x="139" y="478" width="42" height="30"/>
-                                <state key="normal" title="Log in"/>
+                                <rect key="frame" x="136" y="475" width="49" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onLoginButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4RM-wg-Etm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVr-yI-zMm">
+                                <rect key="frame" x="86" y="273" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-White" translatesAutoresizingMaskIntoConstraints="NO" id="r3e-z3-FgP">
+                                <rect key="frame" x="136" y="80" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="9V1-92-sFJ"/>
+                                    <constraint firstAttribute="width" constant="48" id="QFq-VP-3Ff"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="r3e-z3-FgP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="03l-Gf-SJA"/>
+                            <constraint firstItem="eVr-yI-zMm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="81S-5Z-kLw"/>
+                            <constraint firstItem="r3e-z3-FgP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="bPM-FT-qiH"/>
+                            <constraint firstItem="eVr-yI-zMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gv2-aF-VWv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uqI-dQ-cko" secondAttribute="bottom" constant="60" id="rKN-yE-T9f"/>
                             <constraint firstItem="uqI-dQ-cko" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ygB-pa-V5Z"/>
                         </constraints>
@@ -72,26 +92,26 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Screen Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkm-al-N2G">
                                                     <rect key="frame" x="110" y="9" width="82" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.72156862745098038" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0F-2Y-Rbf">
                                                     <rect key="frame" x="64" y="8" width="40" height="17"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.16078431372549018" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWq-Nq-RNE">
                                                     <rect key="frame" x="282" y="9" width="30" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.72156862745098038" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV5-Pq-2d6">
                                                     <rect key="frame" x="64" y="33" width="248" height="17"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.16078431372549018" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="retweets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79J-JI-5bn">
@@ -178,7 +198,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Twitter" id="9lS-Og-qw6">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="CiS-gx-3te">
+                        <barButtonItem key="leftBarButtonItem" image="Compose" id="H05-ez-pjD">
+                            <color key="tintColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Logout" id="CiS-gx-3te">
+                            <color key="tintColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onLogoutButtonTouchUp:" destination="1kq-8P-GDn" id="3C6-IN-0FB"/>
                             </connections>
@@ -212,7 +236,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Compose" width="32" height="32"/>
         <image name="Like-Default" width="32" height="32"/>
+        <image name="Logout" width="32" height="32"/>
         <image name="Retweet-Default" width="32" height="32"/>
+        <image name="Twitter-White" width="96" height="96"/>
     </resources>
 </document>
