@@ -5,4 +5,5 @@ target 'Twitter' do
   pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
   pod 'NSDateMinimalTimeAgo'
+  pod 'SVPullToRefresh'
 end

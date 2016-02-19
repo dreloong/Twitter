@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVPullToRefresh
 
 class HomeViewController: UIViewController {
 
@@ -39,6 +40,8 @@ class HomeViewController: UIViewController {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: .ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
+
+        tableView.addInfiniteScrollingWithActionHandler({ self.fetchMoreTweets() })
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +66,21 @@ class HomeViewController: UIViewController {
         )
 
         refreshControl.endRefreshing()
+    }
+
+    // MARK: - Helpers
+
+    func fetchMoreTweets() {
+        TwitterClient.sharedInstance.homeTimelineWithParams(
+            ["max_id": tweets[tweets.count - 1].id],
+            completion: { (tweets: [Tweet]?, error: NSError?) in
+                if let tweets = tweets {
+                    self.tweets += tweets
+                    self.tableView.reloadData()
+                    self.tableView.infiniteScrollingView.stopAnimating()
+                }
+            }
+        )
     }
 
 }
