@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var refreshControl: UIRefreshControl!
+
     var tweets = [Tweet]()
 
     override func viewDidLoad() {
@@ -33,6 +35,10 @@ class HomeViewController: UIViewController {
                 }
             }
         )
+
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: .ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +49,20 @@ class HomeViewController: UIViewController {
 
     @IBAction func onLogoutButtonTouchUp(sender: AnyObject) {
         User.currentUser?.logout()
+    }
+
+    func onRefresh() {
+        TwitterClient.sharedInstance.homeTimelineWithParams(
+            nil,
+            completion: { (tweets: [Tweet]?, error: NSError?) in
+                if let tweets = tweets {
+                    self.tweets = tweets
+                    self.tableView.reloadData()
+                }
+            }
+        )
+
+        refreshControl.endRefreshing()
     }
 
 }
