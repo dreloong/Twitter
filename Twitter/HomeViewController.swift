@@ -48,6 +48,15 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = tableView.indexPathForCell(sender as! TweetTableViewCell)
+        let tweetDetailViewController =
+            segue.destinationViewController as! TweetDetailViewController
+        tweetDetailViewController.tweet = tweets[indexPath!.row]
+    }
+
     // MARK: - Actions
 
     @IBAction func onLogoutButtonTouchUp(sender: AnyObject) {
@@ -107,5 +116,9 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: UITableViewDelegate {
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
 }
