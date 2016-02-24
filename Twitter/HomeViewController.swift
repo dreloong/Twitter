@@ -51,10 +51,12 @@ class HomeViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath = tableView.indexPathForCell(sender as! TweetTableViewCell)
-        let tweetDetailViewController =
-            segue.destinationViewController as! TweetDetailViewController
-        tweetDetailViewController.tweet = tweets[indexPath!.row]
+        if segue.identifier! == "detail" {
+            let indexPath = tableView.indexPathForCell(sender as! TweetTableViewCell)
+            let tweetDetailViewController =
+                segue.destinationViewController as! TweetDetailViewController
+            tweetDetailViewController.tweet = tweets[indexPath!.row]
+        }
     }
 
     // MARK: - Actions
