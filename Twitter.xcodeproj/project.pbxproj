@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1451537F1C82DDD0005866D6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451537E1C82DDD0005866D6 /* ProfileViewController.swift */; };
 		1461646E1C705E8C0052625D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461646D1C705E8C0052625D /* AppDelegate.swift */; };
 		146164731C705E8C0052625D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146164711C705E8C0052625D /* Main.storyboard */; };
 		146164751C705E8C0052625D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146164741C705E8C0052625D /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1451537E1C82DDD0005866D6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1461646A1C705E8C0052625D /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1461646D1C705E8C0052625D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		146164721C705E8C0052625D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				1461648A1C7553B70052625D /* HomeViewController.swift */,
 				1497CE951C7BEEA7001DD29D /* TweetDetailViewController.swift */,
 				1497CE971C7C0D7F001DD29D /* TweetCompositionViewController.swift */,
+				1451537E1C82DDD0005866D6 /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				146164871C72AFD00052625D /* User.swift in Sources */,
 				1497CE981C7C0D7F001DD29D /* TweetCompositionViewController.swift in Sources */,
+				1451537F1C82DDD0005866D6 /* ProfileViewController.swift in Sources */,
 				146164891C72B02A0052625D /* Tweet.swift in Sources */,
 				146164851C7172BF0052625D /* LoginViewController.swift in Sources */,
 				146164811C7065BA0052625D /* TwitterClient.swift in Sources */,

@@ -11,7 +11,7 @@ import NSDateMinimalTimeAgo
 
 class TweetTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -24,7 +24,7 @@ class TweetTableViewCell: UITableViewCell {
     var tweet: Tweet! {
         didSet {
             let user = tweet.user
-            profileImageView.setImageWithURL((user?.profileImageUrl)!)
+            profileButton.setBackgroundImageForState(.Normal, withURL: (user?.profileImageUrl)!)
             nameLabel.text = user?.name
             screenNameLabel.text = "@" + (user?.screenName)!
             tweetTextLabel.text = tweet.text
@@ -55,8 +55,8 @@ class TweetTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        profileImageView.layer.cornerRadius = 6
-        profileImageView.clipsToBounds = true
+        profileButton.layer.cornerRadius = 6
+        profileButton.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

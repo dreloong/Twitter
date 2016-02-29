@@ -56,6 +56,11 @@ class HomeViewController: UIViewController {
             let tweetDetailViewController =
                 segue.destinationViewController as! TweetDetailViewController
             tweetDetailViewController.tweet = tweets[indexPath!.row]
+        } else if segue.identifier! == "profile" {
+            let cell = (sender as! UIButton).superview?.superview as! TweetTableViewCell
+            let profileViewController =
+                segue.destinationViewController as! ProfileViewController
+            profileViewController.user = cell.tweet.user
         }
     }
 
