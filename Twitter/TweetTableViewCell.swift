@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActiveLabel
 import NSDateMinimalTimeAgo
 
 class TweetTableViewCell: UITableViewCell {
@@ -15,7 +16,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: ActiveLabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var favoriteCountLabel: UILabel!
     @IBOutlet weak var retweetButton: UIButton!
@@ -27,8 +28,16 @@ class TweetTableViewCell: UITableViewCell {
             profileButton.setBackgroundImageForState(.Normal, withURL: (user?.profileImageUrl)!)
             nameLabel.text = user?.name
             screenNameLabel.text = "@" + (user?.screenName)!
+
             tweetTextLabel.text = tweet.text
+            tweetTextLabel.hashtagColor = tweetTextLabel.textColor
+            tweetTextLabel.mentionColor = tweetTextLabel.textColor
+            tweetTextLabel.URLColor = twitterBlueColor
+            tweetTextLabel.handleURLTap({ (url: NSURL) -> () in
+                UIApplication.sharedApplication().openURL(url)
+            })
             tweetTextLabel.sizeToFit()
+
             timeLabel.text = tweet.createdAt?.timeAgo()
 
             favoriteCountLabel.text = tweet.favoriteCount != 0 ? String(tweet.favoriteCount) : ""

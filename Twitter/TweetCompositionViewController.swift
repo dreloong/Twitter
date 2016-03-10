@@ -8,6 +8,10 @@
 
 import UIKit
 
+let twitterBlueColor = UIColor(red:0.33, green:0.67, blue:0.93, alpha:1.0)
+let twitterRedColor = UIColor(red:0.91, green:0.11, blue:0.31, alpha:1.0)
+let twitterGrayColor = UIColor(red:0.67, green:0.72, blue:0.76, alpha:1.0)
+
 class TweetCompositionViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
@@ -16,10 +20,6 @@ class TweetCompositionViewController: UIViewController {
     var toolbar: UIToolbar!
     var countLabel: UILabel!
     var tweetButton: UIButton!
-
-    let twitterBlueColor = UIColor(red:0.33, green:0.67, blue:0.93, alpha:1.0)
-    let twitterRedColor = UIColor(red:0.91, green:0.11, blue:0.31, alpha:1.0)
-    let twitterGrayColor = UIColor(red:0.67, green:0.72, blue:0.76, alpha:1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +103,6 @@ class TweetCompositionViewController: UIViewController {
         ]
         toolbar.sizeToFit()
     }
-
 }
 
 extension TweetCompositionViewController: UITextViewDelegate {
@@ -126,5 +125,4 @@ extension TweetCompositionViewController: UITextViewDelegate {
 
         countLabel.textColor = count < 20 ? twitterRedColor : twitterGrayColor
     }
-
 }

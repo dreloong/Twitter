@@ -32,7 +32,6 @@ class User {
         screenName = dictionary["screen_name"] as? String
 
         backgroundImageUrl = NSURL(string: (dictionary["profile_background_image_url"] as! String))
-        profileBannerUrl = NSURL(string: (dictionary["profile_banner_url"] as! String))
         profileImageUrl = NSURL(string: (dictionary["profile_image_url"] as! String))
 
         followersCount = dictionary["followers_count"] as? Int
@@ -76,5 +75,4 @@ class User {
             object: nil
         )
     }
-
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActiveLabel
 
 class TweetDetailViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: ActiveLabel!
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favoriteCountLabel: UILabel!
@@ -28,7 +29,14 @@ class TweetDetailViewController: UIViewController {
         let user = tweet.user
         nameLabel.text = user?.name
         screenNameLabel.text = "@" + (user?.screenName)!
+
         tweetTextLabel.text = tweet.text
+        tweetTextLabel.hashtagColor = tweetTextLabel.textColor
+        tweetTextLabel.mentionColor = tweetTextLabel.textColor
+        tweetTextLabel.URLColor = twitterBlueColor
+        tweetTextLabel.handleURLTap({ (url: NSURL) -> () in
+            UIApplication.sharedApplication().openURL(url)
+        })
         tweetTextLabel.sizeToFit()
 
         let formatter = NSDateFormatter()
@@ -92,5 +100,4 @@ class TweetDetailViewController: UIViewController {
             retweetCountLabel.textColor = UIColor(red:0.67, green:0.72, blue:0.76, alpha:1.0)
         }
     }
-
 }
